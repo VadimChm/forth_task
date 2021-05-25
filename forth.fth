@@ -2,7 +2,7 @@
 
 : PRINT 
     dup 
-    emit ."  ";
+    emit ."  " ;
     
 : LAST_TO_THE_HEAD
     depth 1 -
@@ -29,15 +29,16 @@
         endif
     endif ;
     
-    
 : DO_LOOP
-    depth 1 - 
-    0 
-    do
-        LOOP_BODY
-        dup ')' = if
-            leave then
-    loop ;
+    depth 1 > if
+        depth 1 - 
+        0 
+        do
+            LOOP_BODY
+            dup ')' = if
+                leave then
+        loop 
+    endif ;
     
 : PRINT_RESULT 
     depth 1 = if

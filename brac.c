@@ -66,7 +66,7 @@ void stack_push (struct stack *s, char c)
 			s->data[s->head + 1] = c;
 			up_head_stack (s);
 		}
-	else 
+	else  
 		fprintf (stderr, "Max stack data!\n");
 }
 
